@@ -1,26 +1,132 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-hanken-grotesk: "Hanken Grotesk";
+
+  /* Main surfaces */
+  --background: #f8f9ff;
+  --surface: #ffffff;
+  --surface-container: #e5eeff;
+  --surface-container-low: #eff4ff;
+  --surface-container-high: #dce9ff;
+
+  /* Text */
+  --foreground: #0b1c30;
+  --text-secondary: #3d4a42;
+  --text-muted: #6d7a72;
+
+  /* Brand colours */
+  --primary: #006948;
+  --primary-hover: #005137;
+  --primary-container: #00855d;
+
+  /* Secondary colours */
+  --secondary: #565e74;
+  --tertiary: #ba0035;
+
+  /* Status colours */
+  --success: #006948;
+  --error: #ba1a1a;
+
+  /* Borders */
+  --border: #bccac0;
+  --border-light: #e5eeff;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px 0 rgba(15, 23, 42, 0.03),
+    0 1px 2px -1px rgba(15, 23, 42, 0.03);
 }
 
 @theme inline {
+  --color-text-secondary: var(--text-secondary);
+--color-border-light: var(--border-light);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-container: var(--primary-container);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-border: var(--border);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container-high: var(--surface-container-high);
+
+  --font-sans: var(--font-hanken-grotesk);
+
+  --color-on-primary-fixed: #002114;
+  --color-secondary-container: #dae2fd;
+  --color-on-primary: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-primary-container: #f5fff7;
+  --color-on-surface-variant: #3d4a42;
+  --color-on-surface: #0b1c30;
+  --color-primary-fixed: #85f8c4;
+  --color-surface-container-highest: #d3e4fe;
+
+  --font-label-sm: "Hanken Grotesk", sans-serif;
+  --font-display-xl: "Hanken Grotesk", sans-serif;
+  --font-headline-sm: "Hanken Grotesk", sans-serif;
+  --font-headline-lg: "Hanken Grotesk", sans-serif;
+  --font-title-md: "Hanken Grotesk", sans-serif;
+  --font-body-lg: "Hanken Grotesk", sans-serif;
+  --font-body-sm: "Hanken Grotesk", sans-serif;
+  --font-display-xl-mobile: "Hanken Grotesk", sans-serif;
+  --font-body-md: "Hanken Grotesk", sans-serif;
+  --font-label-md: "Hanken Grotesk", sans-serif;
+
+  --text-label-sm: 11px;
+  --text-label-sm--line-height: 14px;
+  --text-display-xl: 48px;
+  --text-display-xl--line-height: 56px;
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 28px;
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-title-md: 18px;
+  --text-title-md--line-height: 26px;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-sm: 13px;
+  --text-body-sm--line-height: 18px;
+  --text-display-xl-mobile: 36px;
+  --text-display-xl-mobile--line-height: 44px;
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-hanken-grotesk), sans-serif;
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.currency {
+  font-variant-numeric: tabular-nums;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-card);
 }
